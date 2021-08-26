@@ -28,7 +28,7 @@ public class Stock {
     double price;
     String description;
     
-    @ManyToOne(fetch = FetchType.EAGER,  cascade=CascadeType.ALL)
+    @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name="id_product")
     private Product product;
     

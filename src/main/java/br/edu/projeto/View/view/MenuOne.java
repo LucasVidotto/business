@@ -5,7 +5,7 @@
  */
 package br.edu.projeto.View.view;
 
-import br.edu.projeto.View.Panel.back;
+
 import java.awt.Color;
 
 /**
@@ -19,7 +19,7 @@ public class MenuOne extends javax.swing.JFrame {
      */
     public MenuOne() {
         initComponents();
-        back can = new back();
+
         //Fundo.add(can);
     }
 

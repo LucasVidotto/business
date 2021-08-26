@@ -11,6 +11,7 @@ import java.util.List;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
+import javax.persistence.Query;
 
 /**
  *
@@ -18,17 +19,17 @@ import javax.persistence.Persistence;
  */
 public class FindP {
     
-EntityManagerFactory factory = 
+    EntityManagerFactory factory = 
                 Persistence.createEntityManagerFactory("Hibernate");
         
         EntityManager manager = factory.createEntityManager();
         
-    public Product  findById(long id){
+    public Product  findById(int price){
         
         Product pro = null;
         
         try{
-            pro =  manager.find(Product.class, id);
+            pro =  manager.find(Product.class, price);
         }catch(Exception e){
             System.out.println(e);
         }finally{
@@ -44,14 +45,9 @@ EntityManagerFactory factory =
         List<Product> pro = null;
         
         try{
-           pro =  manager.createQuery("from Product p").getResultList();
+           pro =  manager.createQuery("Select p from Product p").getResultList();
             System.out.println(pro);
-            
-            
-            /*sb.append(" select p");
-            sb.append(" From Product p");
-            System.out.println(sb);
-            pro = manager.;*/
+
             
         }catch(Exception e){
             System.out.println(e);
@@ -62,4 +58,31 @@ EntityManagerFactory factory =
 
         return pro;
     }
+    public Product FindProduct(double price){
+       Product p = new Product();
+       
+       
+      Query q = manager.createQuery("select product from Product product");
+
+      List<Product> resultList = q.getResultList();
+      
+
+      
+      for (Product next : resultList) {
+
+       
+        if(next.getPrice() == (price)){
+
+            p.setName(next.getName());
+            p.setPrice(next.getPrice());
+            p.setDescription(next.getDescription());
+        }else{
+            System.out.println("não entrou");
+            p = null;
+        }
+      }
+
+      return p;
+    } 
+
 }

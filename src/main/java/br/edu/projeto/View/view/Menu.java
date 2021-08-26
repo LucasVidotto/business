@@ -23,7 +23,7 @@ public class Menu extends javax.swing.JFrame {
     public Menu() {
         initComponents();
         
-        canvas canva = new canvas();
+        //canvas canva = new canvas();
         
         //this.jPanelImgFundo.add(canva);
         //jScrollBar1.setBounds(500, 400, 100, 100);

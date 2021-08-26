@@ -5,6 +5,14 @@
  */
 package br.edu.projeto.View.Panel;
 
+import java.awt.Graphics;
+import java.awt.image.BufferedImage;
+import java.io.File;
+import java.io.IOException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.imageio.ImageIO;
+
 /**
  *
  * @author qwert
@@ -14,10 +22,22 @@ public class phone3 extends javax.swing.JPanel {
     /**
      * Creates new form phone3
      */
-    public phone3() {
+     BufferedImage imagemFundo;
+    public phone3
+        () {
         initComponents();
+        try {
+            this.imagemFundo = ImageIO.read(new File("C:\\Users\\qwert\\Desktop\\imagens\\phone3.jpg"));
+        } catch (IOException ex) {
+            Logger.getLogger(phone3.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
 
+    protected void paintComponent(Graphics g){
+        super.paintComponent(g);
+        
+        g.drawImage(imagemFundo.getScaledInstance(195, 195, 0), 0, 0, null);
+    }
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always

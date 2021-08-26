@@ -10,7 +10,7 @@ public class register extends javax.swing.JFrame {
 
     public register() {
         initComponents();
-        canvas canva = new canvas();
+        //canvas canva = new canvas();
 
         //this.jPanelImgFundo.add(canva);
     }

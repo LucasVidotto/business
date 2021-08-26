@@ -209,7 +209,7 @@ public class NewPro extends javax.swing.JFrame {
         st.setProduct(pd);
         
         dateacess2 dc = new dateacess2();
-        //dc.adicionarProduct(pd);
+        dc.adicionarProduct(pd);
         
         AcessStock ast = new AcessStock();
         ast.adicionarStock(st);

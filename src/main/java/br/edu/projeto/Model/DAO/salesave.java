@@ -6,10 +6,13 @@
 package br.edu.projeto.Model.DAO;
 
 import br.edu.projeto.Model.Vo.Sale;
+import br.edu.projeto.Model.Vo.Stock;
+import java.util.List;
 
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
+import javax.persistence.TypedQuery;
 
 /**
  *
@@ -31,4 +34,20 @@ public class salesave {
         //factory.close();
     }
     
+    public void removerSale(Sale pro, long id) {
+        Sale profind = manager.find(Sale.class, id);
+        TypedQuery<Sale> consulta = manager.createQuery("SELECT pro FROM Sale pro", Sale.class);
+       
+        List<Sale> lista = consulta.getResultList();
+        
+         //JOptionPane.showMessageDialog(null, "lista : ");
+        
+        manager.getTransaction().begin();
+        manager.remove(profind);
+        manager.getTransaction().commit();
+        
+        
+        //factory.close();
+        
+    }
 }

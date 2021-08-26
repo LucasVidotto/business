@@ -26,7 +26,7 @@ public class Principal {
     public static void main(String[] args) {
        /*EntityManagerFactory entityManagerFactory = Persistence
         .createEntityManagerFactory("Hibernate");
-    EntityManager entityManager = entityManagerFactory.createEntityManager();*/
+        EntityManager entityManager = entityManagerFactory.createEntityManager();*/
     
         /*Display display = new Display();
         display.setSize(500,400);

@@ -23,7 +23,7 @@ EntityManagerFactory factory =
         
         
 
-    @Override
+@Override
     public void adicionarClient(Client client) {
         /*Client cl = new Client();
         cl.setName("2222");
@@ -31,13 +31,25 @@ EntityManagerFactory factory =
         cl.setEmail("Luft@hot");
         cl.setPassword("111");
         cl.setUserName("111");*/
-        
-        
-        manager.getTransaction().begin();
-        manager.persist(client);
-        manager.getTransaction().commit();
-        
-        //factory.close();
+        try{
+             manager.getTransaction().begin();
+             if(client.getId() == null){
+                 manager.persist(client);
+             }else{
+                 manager.merge(client);
+
+                 /*client = manager.merge(client);
+                 manager.merge(client);*/
+             }
+             manager.getTransaction().commit();
+        }catch (Exception e) {
+			System.err.println(e);
+			manager.getTransaction().rollback();
+        }finally {
+			factory.close();
+		} 
+
+        //
     }
 
     

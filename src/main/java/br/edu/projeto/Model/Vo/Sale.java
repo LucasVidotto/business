@@ -30,7 +30,7 @@ public class Sale {
     
     private double total;
 
-    @ManyToOne(fetch = FetchType.EAGER,  cascade=CascadeType.ALL)
+    @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "id_client")
     private  Client cli;
     
@@ -38,7 +38,7 @@ public class Sale {
     //@JoinColumn(name = "id_emp")
     //private List<Employee> emp;
     
-    @ManyToOne(fetch = FetchType.EAGER,  cascade=CascadeType.ALL)
+    @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name="id_product")
     private Product product;
 

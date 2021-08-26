@@ -5,12 +5,24 @@
  */
 package br.edu.projeto.View.view;
 
+import br.edu.projeto.Model.DAO.AcessStock;
+import br.edu.projeto.Model.DAO.Find;
+import br.edu.projeto.Model.DAO.FindGeral;
 import br.edu.projeto.Model.DAO.FindP;
 import br.edu.projeto.Model.DAO.dateacess2;
-import br.edu.projeto.View.Panel.back;
+import br.edu.projeto.Model.DAO.salesave;
+import br.edu.projeto.Model.Vo.Client;
+import br.edu.projeto.Model.Vo.Logado;
+
 import br.edu.projeto.Model.Vo.Product;
+import br.edu.projeto.Model.Vo.Sale;
+import br.edu.projeto.Model.Vo.Stock;
+import br.edu.projeto.View.Panel.hyperx;
 import br.edu.projeto.View.Panel.phone1;
 import br.edu.projeto.View.Panel.phone2;
+import br.edu.projeto.View.Panel.phone3;
+import br.edu.projeto.View.Panel.phone4;
+import java.awt.Color;
 import javax.swing.JOptionPane;
 
 /**
@@ -24,14 +36,18 @@ public class Prod extends javax.swing.JFrame {
      */
     public Prod() {
         initComponents();
-        back canva = new back();
+        
         phone1 canva2 = new phone1();
         phone2 canva3 = new phone2();
-        this.Fundo.add(canva);
+        phone3 canva4 = new phone3();
+        phone4 canva5 = new phone4();
+        this.Fundo.add(canva5);
         
         this.jPanel1.add(canva2);
         
         this.jPanel2.add(canva3);
+        
+        this.jPanel3.add(canva4);
     }
 
     /**
@@ -60,6 +76,17 @@ public class Prod extends javax.swing.JFrame {
         jSpinner2 = new javax.swing.JSpinner();
         jLabel7 = new javax.swing.JLabel();
         jButton2 = new javax.swing.JButton();
+        jPanel3 = new javax.swing.JPanel();
+        jButton3 = new javax.swing.JButton();
+        jLabel8 = new javax.swing.JLabel();
+        jLabel9 = new javax.swing.JLabel();
+        jSpinner3 = new javax.swing.JSpinner();
+        jButton4 = new javax.swing.JButton();
+        jLabel10 = new javax.swing.JLabel();
+        jLabel11 = new javax.swing.JLabel();
+        jLabel12 = new javax.swing.JLabel();
+        jSpinner4 = new javax.swing.JSpinner();
+        jButton5 = new javax.swing.JButton();
         jMenuBar2 = new javax.swing.JMenuBar();
         jMenu3 = new javax.swing.JMenu();
         jMenuItem1 = new javax.swing.JMenuItem();
@@ -81,7 +108,7 @@ public class Prod extends javax.swing.JFrame {
 
         jLabel3.setText("R$ 1.500,00 ");
 
-        jButton1.setText("Buy");
+        jButton1.setText("BUY");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);
@@ -90,7 +117,7 @@ public class Prod extends javax.swing.JFrame {
 
         jPanel1.setLayout(new java.awt.BorderLayout());
 
-        jLabel4.setText("jLabel4");
+        jLabel4.setText("Produto 4");
 
         jPanel2.setLayout(new java.awt.BorderLayout());
 
@@ -98,9 +125,47 @@ public class Prod extends javax.swing.JFrame {
 
         jLabel6.setText("Quantidade");
 
-        jLabel7.setText("jLabel7");
+        jLabel7.setText("Produto 3");
 
-        jButton2.setText("jButton2");
+        jButton2.setText("BUY");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
+
+        jPanel3.setLayout(new java.awt.BorderLayout());
+
+        jButton3.setText("NEXT PAGE");
+        jButton3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton3ActionPerformed(evt);
+            }
+        });
+
+        jLabel8.setText("R$ 700,00");
+
+        jLabel9.setText("Quantidade");
+
+        jButton4.setText("BUY");
+        jButton4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton4ActionPerformed(evt);
+            }
+        });
+
+        jLabel10.setText("Produto 4");
+
+        jLabel11.setText("R$ 800,00");
+
+        jLabel12.setText("Quantidade");
+
+        jButton5.setText("BUY");
+        jButton5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton5ActionPerformed(evt);
+            }
+        });
 
         jMenu3.setText("Menu");
 
@@ -121,100 +186,470 @@ public class Prod extends javax.swing.JFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(jLabel1)
+                        .addGap(185, 185, 185)
+                        .addComponent(jLabel7)
+                        .addGap(108, 108, 108)
+                        .addComponent(jButton3)
+                        .addGap(0, 0, Short.MAX_VALUE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(93, 93, 93)
+                                .addComponent(jLabel4)))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(146, 146, 146)
+                                .addComponent(jLabel10))
+                            .addGroup(layout.createSequentialGroup()
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jSpinner3, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jLabel9)
+                                    .addComponent(jLabel8))
+                                .addGap(203, 203, 203)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(jButton5, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                        .addComponent(jSpinner4, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(jLabel12)
+                                        .addComponent(jLabel11)))))
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+            .addGroup(layout.createSequentialGroup()
                 .addComponent(Fundo, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 63, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel3)
                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                         .addComponent(jSpinner1, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addComponent(jLabel2)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, 193, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, 200, Short.MAX_VALUE)
+                    .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel5)
-                    .addComponent(jLabel6)
                     .addComponent(jSpinner2, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)))
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(jLabel1)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jLabel7)
-                        .addGap(146, 146, 146))
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
-            .addGroup(layout.createSequentialGroup()
-                .addGap(84, 84, 84)
-                .addComponent(jLabel4)
-                .addGap(0, 0, Short.MAX_VALUE))
+                    .addComponent(jLabel6)
+                    .addComponent(jLabel5)
+                    .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(6, 6, 6)
+                .addGap(2, 2, 2)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel1)
-                    .addComponent(jLabel7))
+                    .addComponent(jLabel7)
+                    .addComponent(jButton3))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addGroup(layout.createSequentialGroup()
+                        .addGap(22, 22, 22)
                         .addComponent(jLabel3)
-                        .addGap(33, 33, 33)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(jLabel2)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(jSpinner1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
                         .addComponent(jButton1))
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                        .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(Fundo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addGroup(layout.createSequentialGroup()
-                            .addGap(13, 13, 13)
-                            .addComponent(jLabel5)
-                            .addGap(18, 18, 18)
-                            .addComponent(jLabel6)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                            .addComponent(jSpinner2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 50, Short.MAX_VALUE)
-                            .addComponent(jButton2)
-                            .addGap(43, 43, 43))))
+                    .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, 201, Short.MAX_VALUE)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(13, 13, 13)
+                        .addComponent(jLabel5)
+                        .addGap(18, 18, 18)
+                        .addComponent(jLabel6)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jSpinner2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(32, 32, 32)
+                        .addComponent(jButton2))
+                    .addComponent(Fundo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jLabel4)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(7, 7, 7))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel4)
+                    .addComponent(jLabel10, javax.swing.GroupLayout.Alignment.TRAILING))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(2, 2, 2)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(7, 7, 7))
+                            .addComponent(jPanel3, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(0, 11, Short.MAX_VALUE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                .addComponent(jLabel8)
+                                .addGap(18, 18, 18)
+                                .addComponent(jLabel9)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jSpinner3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(32, 32, 32)
+                                .addComponent(jButton4)
+                                .addGap(64, 64, 64))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                .addComponent(jLabel11)
+                                .addGap(18, 18, 18)
+                                .addComponent(jLabel12)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jSpinner4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(31, 31, 31)
+                                .addComponent(jButton5)
+                                .addGap(55, 55, 55))))))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        /*dateacess2 dt = new dateacess2();
+        dateacess2 dt = new dateacess2();
+        AcessStock act = new AcessStock();
         FindP find = new FindP();
-        int quantidade =  (int) jSpinner1.getValue();
-        JOptionPane.showMessageDialog(null, "quanti : "+quantidade);
-        for(Product p: find.findAll()){
-            if(p.getName().equals("Notebook1")){
+        Find fin = new Find();
+        FindGeral fg = new FindGeral();
+        int quantidade =  0;
+        String name ="";
+        String descricao = "";
+        long idd = 0;
+        double prico = 0;
+        int quanti = (int) jSpinner2.getValue();
+        
+        for(Product p: find.findAll()){ 
+            for(Stock st:fg.findStock()){
+                quantidade = st.getQuantity();
                 
-                dt.removerProduct(p, 1);
+                if(p.getName().equals(st.getName())){
+                    
+                    JOptionPane.showMessageDialog(null,"nome : "+st.getName());
+                    st.setDescription(descricao);
+                    st.setName(name);
+                    st.setPrice(prico);
+                    st.setQuantity(quantidade);
+                    st.setProduct(p);
+                    act.removerStock(st, st.getCode());
+                    
+                    
+                }
                 
-            //}
-           
             }
+            name = p.getName();
+            descricao = p.getDescription();
+            prico = p.getPrice();
+            idd = p.getId();
+            Stock st = new Stock();
+            st.setDescription(descricao);
+            st.setName(name);
+            st.setPrice(prico);
+            st.setQuantity(quantidade - quanti);
+            st.setProduct(p);
+            //act.adicionarStock(st);
+            
+            if(p.getPrice()== 1500){
+                //dt.removerProduct(p, p.getId());
+                Sale sale = new Sale();
+                JOptionPane.showMessageDialog(null, " entrou");
+                
+                for(Client cli :fin.findAll()){
+                    for(Logado log:fg.findLogado()){
+                        if(cli.getId() == log.getCode()){
+                            //Product p1 = new Product();
+                            JOptionPane.showMessageDialog(null, " entrou2");
+       
+                            
+                            p.setName(name);
+                            p.setPrice(prico);
+                            p.setDescription(descricao);
+                            
+                            //dt.closed();
+
+                            //dt.adicionarProduct(p1);
+
+                            sale.setTotal(p.getPrice() * quanti);
+                            sale.setProduct(p);
+                            sale.setCli(cli);
+                            salesave sv = new salesave();
+                            sv.adicionar(sale);
+                        }
+                        else{
+                            JOptionPane.showMessageDialog(null, "Não entrou2");
+                        }
+                    }
+                }
+            }JOptionPane.showMessageDialog(null, "Não entrou");
+  
         }
-        dt.closed();*/
+        
+        
+        dt.closed();
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
         Menu menu = new Menu();
+        menu.setSize(450,400);
+        menu.getContentPane().setBackground(Color.BLACK);
         menu.setVisible(true);
-        dispose();
     }//GEN-LAST:event_jMenuItem1ActionPerformed
+
+    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+        Prod2 pro = new Prod2();
+        pro.setSize(606,500);
+        pro.setVisible(true);
+    }//GEN-LAST:event_jButton3ActionPerformed
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        dateacess2 dt = new dateacess2();
+        AcessStock act = new AcessStock();
+        FindP find = new FindP();
+        Find fin = new Find();
+        FindGeral fg = new FindGeral();
+        int quantidade =  0;
+        String name ="";
+        String descricao = "";
+        long idd = 0;
+        double prico = 0;
+        int quanti = (int) jSpinner2.getValue();
+        
+        for(Product p: find.findAll()){ 
+            for(Stock st:fg.findStock()){
+                quantidade = st.getQuantity();
+                
+                if(p.getName().equals(st.getName())){
+                    
+                    JOptionPane.showMessageDialog(null,"nome : "+st.getName());
+                    st.setDescription(descricao);
+                    st.setName(name);
+                    st.setPrice(prico);
+                    st.setQuantity(quantidade);
+                    st.setProduct(p);
+                    act.removerStock(st, st.getCode());
+                    
+                    
+                }
+                
+            }
+            name = p.getName();
+            descricao = p.getDescription();
+            prico = p.getPrice();
+            idd = p.getId();
+            Stock st = new Stock();
+            st.setDescription(descricao);
+            st.setName(name);
+            st.setPrice(prico);
+            st.setQuantity(quantidade - quanti);
+            st.setProduct(p);
+            //act.adicionarStock(st);
+            
+            if(p.getPrice()== 600){
+                //dt.removerProduct(p, p.getId());
+                Sale sale = new Sale();
+                JOptionPane.showMessageDialog(null, " entrou");
+                
+                for(Client cli :fin.findAll()){
+                    for(Logado log:fg.findLogado()){
+                        if(cli.getId() == log.getCode()){
+                            //Product p1 = new Product();
+                            JOptionPane.showMessageDialog(null, " entrou2");
+       
+                            
+                            p.setName(name);
+                            p.setPrice(prico);
+                            p.setDescription(descricao);
+                            
+                            //dt.closed();
+
+                            //dt.adicionarProduct(p1);
+
+                            sale.setTotal(p.getPrice() * quanti);
+                            sale.setProduct(p);
+                            sale.setCli(cli);
+                            salesave sv = new salesave();
+                            sv.adicionar(sale);
+                        }
+                        else{
+                            JOptionPane.showMessageDialog(null, "Não entrou2");
+                        }
+                    }
+                }
+            }JOptionPane.showMessageDialog(null, "Não entrou");
+  
+        }
+        
+        
+        dt.closed();
+    }//GEN-LAST:event_jButton2ActionPerformed
+
+    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
+        dateacess2 dt = new dateacess2();
+        AcessStock act = new AcessStock();
+        FindP find = new FindP();
+        Find fin = new Find();
+        FindGeral fg = new FindGeral();
+        int quantidade =  0;
+        String name ="";
+        String descricao = "";
+        long idd = 0;
+        double prico = 0;
+        int quanti = (int) jSpinner2.getValue();
+        
+        for(Product p: find.findAll()){ 
+            for(Stock st:fg.findStock()){
+                quantidade = st.getQuantity();
+                
+                if(p.getName().equals(st.getName())){
+                    
+                    JOptionPane.showMessageDialog(null,"nome : "+st.getName());
+                    st.setDescription(descricao);
+                    st.setName(name);
+                    st.setPrice(prico);
+                    st.setQuantity(quantidade);
+                    st.setProduct(p);
+                    act.removerStock(st, st.getCode());
+                    
+                    
+                }
+                
+            }
+            name = p.getName();
+            descricao = p.getDescription();
+            prico = p.getPrice();
+            idd = p.getId();
+            Stock st = new Stock();
+            st.setDescription(descricao);
+            st.setName(name);
+            st.setPrice(prico);
+            st.setQuantity(quantidade - quanti);
+            st.setProduct(p);
+            //act.adicionarStock(st);
+            
+            if(p.getPrice()== 700){
+                //dt.removerProduct(p, p.getId());
+                Sale sale = new Sale();
+                JOptionPane.showMessageDialog(null, " entrou");
+                
+                for(Client cli :fin.findAll()){
+                    for(Logado log:fg.findLogado()){
+                        if(cli.getId() == log.getCode()){
+                            //Product p1 = new Product();
+                            JOptionPane.showMessageDialog(null, " entrou2");
+       
+                            
+                            p.setName(name);
+                            p.setPrice(prico);
+                            p.setDescription(descricao);
+                            
+                            //dt.closed();
+
+                            //dt.adicionarProduct(p1);
+
+                            sale.setTotal(p.getPrice() * quanti);
+                            sale.setProduct(p);
+                            sale.setCli(cli);
+                            salesave sv = new salesave();
+                            sv.adicionar(sale);
+                        }
+                        else{
+                            JOptionPane.showMessageDialog(null, "Não entrou2");
+                        }
+                    }
+                }
+            }JOptionPane.showMessageDialog(null, "Não entrou");
+  
+        }
+        
+        
+        dt.closed();
+    }//GEN-LAST:event_jButton4ActionPerformed
+
+    private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
+        dateacess2 dt = new dateacess2();
+        AcessStock act = new AcessStock();
+        FindP find = new FindP();
+        Find fin = new Find();
+        FindGeral fg = new FindGeral();
+        int quantidade =  0;
+        String name ="";
+        String descricao = "";
+        long idd = 0;
+        double prico = 0;
+        int quanti = (int) jSpinner2.getValue();
+        
+        for(Product p: find.findAll()){ 
+            for(Stock st:fg.findStock()){
+                quantidade = st.getQuantity();
+                
+                if(p.getName().equals(st.getName())){
+                    
+                    JOptionPane.showMessageDialog(null,"nome : "+st.getName());
+                    st.setDescription(descricao);
+                    st.setName(name);
+                    st.setPrice(prico);
+                    st.setQuantity(quantidade);
+                    st.setProduct(p);
+                    act.removerStock(st, st.getCode());
+                    
+                    
+                }
+                
+            }
+            name = p.getName();
+            descricao = p.getDescription();
+            prico = p.getPrice();
+            idd = p.getId();
+            Stock st = new Stock();
+            st.setDescription(descricao);
+            st.setName(name);
+            st.setPrice(prico);
+            st.setQuantity(quantidade - quanti);
+            st.setProduct(p);
+            //act.adicionarStock(st);
+            
+            if(p.getPrice()== 800){
+                //dt.removerProduct(p, p.getId());
+                Sale sale = new Sale();
+                JOptionPane.showMessageDialog(null, " entrou");
+                
+                for(Client cli :fin.findAll()){
+                    for(Logado log:fg.findLogado()){
+                        if(cli.getId() == log.getCode()){
+                            //Product p1 = new Product();
+                            JOptionPane.showMessageDialog(null, " entrou2");
+       
+                            
+                            p.setName(name);
+                            p.setPrice(prico);
+                            p.setDescription(descricao);
+                            
+                            //dt.closed();
+
+                            //dt.adicionarProduct(p1);
+
+                            sale.setTotal(p.getPrice() * quanti);
+                            sale.setProduct(p);
+                            sale.setCli(cli);
+                            salesave sv = new salesave();
+                            sv.adicionar(sale);
+                        }
+                        else{
+                            JOptionPane.showMessageDialog(null, "Não entrou2");
+                        }
+                    }
+                }
+            }JOptionPane.showMessageDialog(null, "Não entrou");
+  
+        }
+        
+        
+        dt.closed();
+    }//GEN-LAST:event_jButton5ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -255,13 +690,21 @@ public class Prod extends javax.swing.JFrame {
     private javax.swing.JPanel Fundo;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
+    private javax.swing.JButton jButton3;
+    private javax.swing.JButton jButton4;
+    private javax.swing.JButton jButton5;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel10;
+    private javax.swing.JLabel jLabel11;
+    private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu2;
     private javax.swing.JMenu jMenu3;
@@ -270,7 +713,10 @@ public class Prod extends javax.swing.JFrame {
     private javax.swing.JMenuItem jMenuItem1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
+    private javax.swing.JPanel jPanel3;
     private javax.swing.JSpinner jSpinner1;
     private javax.swing.JSpinner jSpinner2;
+    private javax.swing.JSpinner jSpinner3;
+    private javax.swing.JSpinner jSpinner4;
     // End of variables declaration//GEN-END:variables
 }

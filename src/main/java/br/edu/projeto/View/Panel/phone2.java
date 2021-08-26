@@ -26,9 +26,9 @@ public class phone2 extends javax.swing.JPanel {
     public phone2() {
         initComponents();
         try {
-            this.imagemFundo = ImageIO.read(new File("C:\\Users\\qwert\\Desktop\\imagens\\confirm.jpg"));
+            this.imagemFundo = ImageIO.read(new File("C:\\Users\\qwert\\Desktop\\imagens\\phone2.jpg"));
         } catch (IOException ex) {
-            Logger.getLogger(canvasP.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(phone2.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
 

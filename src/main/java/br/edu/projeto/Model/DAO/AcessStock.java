@@ -12,6 +12,7 @@ import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
 import javax.persistence.TypedQuery;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -24,18 +25,31 @@ public class AcessStock implements DAOStock{
         EntityManager manager = factory.createEntityManager();
     @Override
     public void adicionarStock(Stock sto) {
-        manager.getTransaction().begin();
-        manager.persist(sto);
-        manager.getTransaction().commit();
-        factory.close();
+        try{
+             manager.getTransaction().begin();
+             if(sto.getCode()== null){
+                 manager.persist(sto);
+             }else{
+                 manager.merge(sto);
+
+                 /*client = manager.merge(client);
+                 manager.merge(client);*/
+             }
+             manager.getTransaction().commit();
+        }catch (Exception e) {
+			System.err.println(e);
+			manager.getTransaction().rollback();
+        }finally {
+			//factory.close();
+		} 
     }
 
     
 
     @Override
-    public void removerStock(Stock pro, long id) {
+    public void removerStock(Stock sto, long id) {
         Stock profind = manager.find(Stock.class, id);
-        TypedQuery<Stock> consulta = manager.createQuery("SELECT pro FROM Stock pro", Stock.class);
+        TypedQuery<Stock> consulta = manager.createQuery("SELECT sto FROM Stock sto", Stock.class);
        
         List<Stock> lista = consulta.getResultList();
         
@@ -44,13 +58,17 @@ public class AcessStock implements DAOStock{
         manager.getTransaction().begin();
         manager.remove(profind);
         manager.getTransaction().commit();
+        
+        
         //factory.close();
         
     }
 
     @Override
     public void atualizarStock(Stock pro) {
-
+        /*manager.getTransaction().begin();
+        pro = manager.merge(pro);
+        manager.getTransaction().commit();*/
     }
 
     @Override

@@ -29,7 +29,7 @@ public class phone1 extends javax.swing.JPanel {
         try {
             this. imagemFundo = ImageIO.read(new File("C:\\Users\\qwert\\Desktop\\imagens\\phone1.jpg"));
         } catch (IOException ex) {
-            Logger.getLogger(canvasP.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(phone1.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
 

@@ -174,6 +174,7 @@ public class logar extends javax.swing.JFrame {
                 
                 auxL = login;
                 id = c.getId();
+                System.out.println("id : "+id);
                 
             }
             
@@ -196,6 +197,8 @@ public class logar extends javax.swing.JFrame {
                     }
                    
                     lg.setCode(id);
+                    
+                    System.out.println("code : "+lg.getCode());
                     log.Logar(lg);
                 
                     Menu menu = new Menu();
