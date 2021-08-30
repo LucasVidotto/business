@@ -6,6 +6,7 @@
 package br.edu.projeto.Model.Vo;
 
 import java.util.List;
+import java.util.Set;
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
@@ -14,6 +15,8 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
 
 import javax.persistence.Table;
 
@@ -25,7 +28,7 @@ import javax.persistence.Table;
 @Table(name = "sale")
 public class Sale {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private Long cod;
     
     private double total;
@@ -38,9 +41,9 @@ public class Sale {
     //@JoinColumn(name = "id_emp")
     //private List<Employee> emp;
     
-    @ManyToOne(fetch = FetchType.EAGER)
-    @JoinColumn(name="id_product")
-    private Product product;
+    @OneToOne( fetch = FetchType.LAZY)
+    @JoinColumn(name = "stock_id")
+    private Stock Stock;
 
     public Long getCod() {
         return cod;
@@ -58,14 +61,6 @@ public class Sale {
         this.total = total;
     }
 
-    public Product getProduct() {
-        return product;
-    }
-
-    public void setProduct(Product product) {
-        this.product = product;
-    }
-
     public Client getCli() {
         return cli;
     }
@@ -73,6 +68,15 @@ public class Sale {
     public void setCli(Client cli) {
         this.cli = cli;
     }
+
+    public Stock getStock() {
+        return Stock;
+    }
+
+    public void setStock(Stock Stock) {
+        this.Stock = Stock;
+    }
+
     
     
 }

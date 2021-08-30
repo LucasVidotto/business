@@ -21,12 +21,12 @@ import javax.swing.JOptionPane;
  *
  * @author Usuario
  */
-public class Alterar extends javax.swing.JFrame {
+public class Change extends javax.swing.JFrame {
 
     /**
      * Creates new form Alterar
      */
-    public Alterar() {
+    public Change() {
         initComponents();
     }
 
@@ -163,7 +163,7 @@ public class Alterar extends javax.swing.JFrame {
                 phone = c.getPhone();
                 idd = c.getId();
                 
-                dt.removerClient(c, c.getId());
+                //dt.removerClient(c, c.getId());
                 
             }
            // System.out.println("aux : "+c.getPassword());
@@ -181,10 +181,10 @@ public class Alterar extends javax.swing.JFrame {
             cl.setEmail(email);
             cl.setPhone(phone);
             cl.setUserName(userName);
-            //cl.setId(idd);
+            cl.setId(idd);
             
             
-            dt.atualizarClient(cl);
+            dt.adicionarClient(cl);
             JOptionPane.showMessageDialog(null, "Alterado");
         }else{
             JOptionPane.showMessageDialog(null,"A senha está incorreta");
@@ -205,7 +205,7 @@ public class Alterar extends javax.swing.JFrame {
 
        // }
         
-        dt.closed();
+       // dt.closed();
     }//GEN-LAST:event_ConfirmActionPerformed
     
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
@@ -235,20 +235,21 @@ public class Alterar extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(Alterar.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Change.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(Alterar.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Change.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(Alterar.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Change.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(Alterar.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Change.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new Alterar().setVisible(true);
+                new Change().setVisible(true);
             }
         });
     }

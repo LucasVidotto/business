@@ -37,7 +37,7 @@ public class Display extends javax.swing.JFrame {
         for(Client cli :fin.findAll()){
             for(Logado log:fg.findLogado()){
                 if(cli.getId() == log.getCode()){
-                    
+                    System.out.println("entrouuuuuuuuu");
 
                     jLabel2.setText(cli.getName());
                     jLabel6.setText(cli.getUserName());

@@ -292,7 +292,7 @@ public class register extends javax.swing.JFrame {
         cd.setPassword(String.valueOf(jPasswordField2.getPassword()));
         
         Check check = new Check();
-        check.CheckUser(jTextField4.getText());
+        check.CheckUser(String.valueOf(jTextField4.getText()));
         
         if(check.getNumber() == 0){
            JOptionPane.showMessageDialog(null,"Já exite esse User Name");

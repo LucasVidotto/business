@@ -19,7 +19,7 @@ import javax.swing.JOptionPane;
  *
  * @author qwert
  */
-public class Check {
+public class Check {//Regra de negócio
     int number = 3;
     EntityManagerFactory factory = 
                 Persistence.createEntityManagerFactory("Hibernate");
@@ -30,11 +30,13 @@ public class Check {
         
         
         for(Client cli:find.findAll()){
+            JOptionPane.showMessageDialog(null,"nome : "+cli.getId());
                 if(cli.getName().equals(user)){
                     
                     number = 0;
-                    break;
                     //JOptionPane.showConfirmDialog(null,"Já exite esse User Name");
+                    break;
+                    
                 }else{
                     number = 1;
      

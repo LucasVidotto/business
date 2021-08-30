@@ -6,6 +6,7 @@
 package br.edu.projeto.View.view;
 
 import br.edu.projeto.Model.DAO.AcessStock;
+import br.edu.projeto.Model.DAO.BuyItem;
 import br.edu.projeto.Model.DAO.Find;
 import br.edu.projeto.Model.DAO.FindGeral;
 import br.edu.projeto.Model.DAO.FindP;
@@ -239,7 +240,7 @@ public class Prod extends javax.swing.JFrame {
                     .addComponent(jLabel6)
                     .addComponent(jLabel5)
                     .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -271,7 +272,7 @@ public class Prod extends javax.swing.JFrame {
                         .addGap(32, 32, 32)
                         .addComponent(jButton2))
                     .addComponent(Fundo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel4)
                     .addComponent(jLabel10, javax.swing.GroupLayout.Alignment.TRAILING))
@@ -283,7 +284,7 @@ public class Prod extends javax.swing.JFrame {
                                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(7, 7, 7))
                             .addComponent(jPanel3, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(0, 11, Short.MAX_VALUE))
+                        .addContainerGap())
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -311,85 +312,23 @@ public class Prod extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        dateacess2 dt = new dateacess2();
-        AcessStock act = new AcessStock();
-        FindP find = new FindP();
-        Find fin = new Find();
-        FindGeral fg = new FindGeral();
-        int quantidade =  0;
-        String name ="";
-        String descricao = "";
-        long idd = 0;
-        double prico = 0;
-        int quanti = (int) jSpinner2.getValue();
+        Product product = new Product();
+        BuyItem sfind = new BuyItem();
+        int quanti = (int) jSpinner1.getValue();
+        int num;
         
-        for(Product p: find.findAll()){ 
-            for(Stock st:fg.findStock()){
-                quantidade = st.getQuantity();
-                
-                if(p.getName().equals(st.getName())){
-                    
-                    JOptionPane.showMessageDialog(null,"nome : "+st.getName());
-                    st.setDescription(descricao);
-                    st.setName(name);
-                    st.setPrice(prico);
-                    st.setQuantity(quantidade);
-                    st.setProduct(p);
-                    act.removerStock(st, st.getCode());
-                    
-                    
-                }
-                
-            }
-            name = p.getName();
-            descricao = p.getDescription();
-            prico = p.getPrice();
-            idd = p.getId();
-            Stock st = new Stock();
-            st.setDescription(descricao);
-            st.setName(name);
-            st.setPrice(prico);
-            st.setQuantity(quantidade - quanti);
-            st.setProduct(p);
-            //act.adicionarStock(st);
-            
-            if(p.getPrice()== 1500){
-                //dt.removerProduct(p, p.getId());
-                Sale sale = new Sale();
-                JOptionPane.showMessageDialog(null, " entrou");
-                
-                for(Client cli :fin.findAll()){
-                    for(Logado log:fg.findLogado()){
-                        if(cli.getId() == log.getCode()){
-                            //Product p1 = new Product();
-                            JOptionPane.showMessageDialog(null, " entrou2");
-       
-                            
-                            p.setName(name);
-                            p.setPrice(prico);
-                            p.setDescription(descricao);
-                            
-                            //dt.closed();
-
-                            //dt.adicionarProduct(p1);
-
-                            sale.setTotal(p.getPrice() * quanti);
-                            sale.setProduct(p);
-                            sale.setCli(cli);
-                            salesave sv = new salesave();
-                            sv.adicionar(sale);
-                        }
-                        else{
-                            JOptionPane.showMessageDialog(null, "Não entrou2");
-                        }
-                    }
-                }
-            }JOptionPane.showMessageDialog(null, "Não entrou");
-  
+        num = sfind.FindProduct(1500,quanti);
+        
+        System.out.println(" Num Num Num: "+num);
+        
+        if(num == 1){
+            Purchase pur = new Purchase();
+            pur.setSize(500,400);
+            pur.setVisible(true);
+            dispose();
+        }else{
+            JOptionPane.showMessageDialog(null,"alguma coisa deu errado");
         }
-        
-        
-        dt.closed();
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
@@ -402,253 +341,69 @@ public class Prod extends javax.swing.JFrame {
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
         Prod2 pro = new Prod2();
         pro.setSize(606,500);
+        pro.getContentPane().setBackground(Color.white);
         pro.setVisible(true);
     }//GEN-LAST:event_jButton3ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        dateacess2 dt = new dateacess2();
-        AcessStock act = new AcessStock();
-        FindP find = new FindP();
-        Find fin = new Find();
-        FindGeral fg = new FindGeral();
-        int quantidade =  0;
-        String name ="";
-        String descricao = "";
-        long idd = 0;
-        double prico = 0;
+        Product product = new Product();
+        BuyItem sfind = new BuyItem();
         int quanti = (int) jSpinner2.getValue();
+        int num;
         
-        for(Product p: find.findAll()){ 
-            for(Stock st:fg.findStock()){
-                quantidade = st.getQuantity();
-                
-                if(p.getName().equals(st.getName())){
-                    
-                    JOptionPane.showMessageDialog(null,"nome : "+st.getName());
-                    st.setDescription(descricao);
-                    st.setName(name);
-                    st.setPrice(prico);
-                    st.setQuantity(quantidade);
-                    st.setProduct(p);
-                    act.removerStock(st, st.getCode());
-                    
-                    
-                }
-                
-            }
-            name = p.getName();
-            descricao = p.getDescription();
-            prico = p.getPrice();
-            idd = p.getId();
-            Stock st = new Stock();
-            st.setDescription(descricao);
-            st.setName(name);
-            st.setPrice(prico);
-            st.setQuantity(quantidade - quanti);
-            st.setProduct(p);
-            //act.adicionarStock(st);
-            
-            if(p.getPrice()== 600){
-                //dt.removerProduct(p, p.getId());
-                Sale sale = new Sale();
-                JOptionPane.showMessageDialog(null, " entrou");
-                
-                for(Client cli :fin.findAll()){
-                    for(Logado log:fg.findLogado()){
-                        if(cli.getId() == log.getCode()){
-                            //Product p1 = new Product();
-                            JOptionPane.showMessageDialog(null, " entrou2");
-       
-                            
-                            p.setName(name);
-                            p.setPrice(prico);
-                            p.setDescription(descricao);
-                            
-                            //dt.closed();
-
-                            //dt.adicionarProduct(p1);
-
-                            sale.setTotal(p.getPrice() * quanti);
-                            sale.setProduct(p);
-                            sale.setCli(cli);
-                            salesave sv = new salesave();
-                            sv.adicionar(sale);
-                        }
-                        else{
-                            JOptionPane.showMessageDialog(null, "Não entrou2");
-                        }
-                    }
-                }
-            }JOptionPane.showMessageDialog(null, "Não entrou");
-  
+        num = sfind.FindProduct(600,quanti);
+        
+        System.out.println(" Num Num Num: "+num);
+        
+        if(num == 1){
+            Purchase pur = new Purchase();
+            pur.setSize(500,400);
+            pur.setVisible(true);
+            dispose();
+        }else{
+            JOptionPane.showMessageDialog(null,"alguma coisa deu errado");
         }
-        
-        
-        dt.closed();
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
-        dateacess2 dt = new dateacess2();
-        AcessStock act = new AcessStock();
-        FindP find = new FindP();
-        Find fin = new Find();
-        FindGeral fg = new FindGeral();
-        int quantidade =  0;
-        String name ="";
-        String descricao = "";
-        long idd = 0;
-        double prico = 0;
-        int quanti = (int) jSpinner2.getValue();
+       Product product = new Product();
+        BuyItem sfind = new BuyItem();
+        int quanti = (int) jSpinner3.getValue();
+        int num;
         
-        for(Product p: find.findAll()){ 
-            for(Stock st:fg.findStock()){
-                quantidade = st.getQuantity();
-                
-                if(p.getName().equals(st.getName())){
-                    
-                    JOptionPane.showMessageDialog(null,"nome : "+st.getName());
-                    st.setDescription(descricao);
-                    st.setName(name);
-                    st.setPrice(prico);
-                    st.setQuantity(quantidade);
-                    st.setProduct(p);
-                    act.removerStock(st, st.getCode());
-                    
-                    
-                }
-                
-            }
-            name = p.getName();
-            descricao = p.getDescription();
-            prico = p.getPrice();
-            idd = p.getId();
-            Stock st = new Stock();
-            st.setDescription(descricao);
-            st.setName(name);
-            st.setPrice(prico);
-            st.setQuantity(quantidade - quanti);
-            st.setProduct(p);
-            //act.adicionarStock(st);
-            
-            if(p.getPrice()== 700){
-                //dt.removerProduct(p, p.getId());
-                Sale sale = new Sale();
-                JOptionPane.showMessageDialog(null, " entrou");
-                
-                for(Client cli :fin.findAll()){
-                    for(Logado log:fg.findLogado()){
-                        if(cli.getId() == log.getCode()){
-                            //Product p1 = new Product();
-                            JOptionPane.showMessageDialog(null, " entrou2");
-       
-                            
-                            p.setName(name);
-                            p.setPrice(prico);
-                            p.setDescription(descricao);
-                            
-                            //dt.closed();
-
-                            //dt.adicionarProduct(p1);
-
-                            sale.setTotal(p.getPrice() * quanti);
-                            sale.setProduct(p);
-                            sale.setCli(cli);
-                            salesave sv = new salesave();
-                            sv.adicionar(sale);
-                        }
-                        else{
-                            JOptionPane.showMessageDialog(null, "Não entrou2");
-                        }
-                    }
-                }
-            }JOptionPane.showMessageDialog(null, "Não entrou");
-  
+        num = sfind.FindProduct(700,quanti);
+        
+        System.out.println(" Num Num Num: "+num);
+        
+        if(num == 1){
+            Purchase pur = new Purchase();
+            pur.setSize(500,400);
+            pur.setVisible(true);
+            dispose();
+        }else{
+            JOptionPane.showMessageDialog(null,"alguma coisa deu errado");
         }
-        
-        
-        dt.closed();
     }//GEN-LAST:event_jButton4ActionPerformed
 
     private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
-        dateacess2 dt = new dateacess2();
-        AcessStock act = new AcessStock();
-        FindP find = new FindP();
-        Find fin = new Find();
-        FindGeral fg = new FindGeral();
-        int quantidade =  0;
-        String name ="";
-        String descricao = "";
-        long idd = 0;
-        double prico = 0;
-        int quanti = (int) jSpinner2.getValue();
+       Product product = new Product();
+        BuyItem sfind = new BuyItem();
+        int quanti = (int) jSpinner4.getValue();
+        int num;
         
-        for(Product p: find.findAll()){ 
-            for(Stock st:fg.findStock()){
-                quantidade = st.getQuantity();
-                
-                if(p.getName().equals(st.getName())){
-                    
-                    JOptionPane.showMessageDialog(null,"nome : "+st.getName());
-                    st.setDescription(descricao);
-                    st.setName(name);
-                    st.setPrice(prico);
-                    st.setQuantity(quantidade);
-                    st.setProduct(p);
-                    act.removerStock(st, st.getCode());
-                    
-                    
-                }
-                
-            }
-            name = p.getName();
-            descricao = p.getDescription();
-            prico = p.getPrice();
-            idd = p.getId();
-            Stock st = new Stock();
-            st.setDescription(descricao);
-            st.setName(name);
-            st.setPrice(prico);
-            st.setQuantity(quantidade - quanti);
-            st.setProduct(p);
-            //act.adicionarStock(st);
-            
-            if(p.getPrice()== 800){
-                //dt.removerProduct(p, p.getId());
-                Sale sale = new Sale();
-                JOptionPane.showMessageDialog(null, " entrou");
-                
-                for(Client cli :fin.findAll()){
-                    for(Logado log:fg.findLogado()){
-                        if(cli.getId() == log.getCode()){
-                            //Product p1 = new Product();
-                            JOptionPane.showMessageDialog(null, " entrou2");
-       
-                            
-                            p.setName(name);
-                            p.setPrice(prico);
-                            p.setDescription(descricao);
-                            
-                            //dt.closed();
-
-                            //dt.adicionarProduct(p1);
-
-                            sale.setTotal(p.getPrice() * quanti);
-                            sale.setProduct(p);
-                            sale.setCli(cli);
-                            salesave sv = new salesave();
-                            sv.adicionar(sale);
-                        }
-                        else{
-                            JOptionPane.showMessageDialog(null, "Não entrou2");
-                        }
-                    }
-                }
-            }JOptionPane.showMessageDialog(null, "Não entrou");
-  
+        num = sfind.FindProduct(800,quanti);
+        
+        System.out.println(" Num Num Num: "+num);
+        
+        if(num == 1){
+            Purchase pur = new Purchase();
+            pur.setSize(500,400);
+            pur.getContentPane().setBackground(Color.black);
+            pur.setVisible(true);
+            dispose();
+        }else{
+            JOptionPane.showMessageDialog(null,"alguma coisa deu errado");
         }
-        
-        
-        dt.closed();
     }//GEN-LAST:event_jButton5ActionPerformed
 
     /**

@@ -121,6 +121,7 @@ public class Purchase extends javax.swing.JFrame {
         jLabel4.setText("Parcelas");
 
         jLabel5.setFont(new java.awt.Font("Times New Roman", 1, 24)); // NOI18N
+        jLabel5.setForeground(new java.awt.Color(255, 255, 255));
         jLabel5.setText("Purchase");
 
         jLabel6.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N

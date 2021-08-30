@@ -6,7 +6,10 @@
 package br.edu.projeto.Model.DAO;
 
 
+import br.edu.projeto.Model.Vo.Client;
+import br.edu.projeto.Model.Vo.Logado;
 import br.edu.projeto.Model.Vo.Product;
+import br.edu.projeto.Model.Vo.Sale;
 import br.edu.projeto.Model.Vo.Stock;
 import java.util.List;
 import javax.persistence.EntityManager;
@@ -30,17 +33,35 @@ public class BuyItem implements DAOBuy{
     public int FindProduct(double price,int quanti){
        Product p = new Product();
        Stock st = new Stock();
+       Sale sale = new Sale();
+       salesave sv = new salesave();
+       
        int num = 0;
+       
+       Query loga = manager.createQuery("select logado from Logado logado");
+
+      List<Logado> resultList3 = loga.getResultList();
+      
+      Query clien = manager.createQuery("select client from Client client");
+
+      List<Client> resultList4 = clien.getResultList();
+      
+      for(Logado log: resultList3){
+          for(Client cli:resultList4){
+          if(cli.getId() == log.getCode()){
+              sale.setCli(cli);
+          }
+          
+        }
+          
+      }
        
       Query q = manager.createQuery("select product from Product product");
 
       List<Product> resultList = q.getResultList();
       
-
-      
       for (Product pro : resultList) {
 
-       
         if(pro.getPrice() == (price)){
 
             p.setName(pro.getName());
@@ -82,11 +103,14 @@ public class BuyItem implements DAOBuy{
             dt2.adicionarProduct(p);
             acss.adicionarStock(st);
             
-            
+            sale.setStock(st);
+            sale.setTotal(price * quanti);
+            sv.adicionar(sale);
+         
             
         }else{
             System.out.println("não entrou");
-            p = null;
+            
         }
         
       }

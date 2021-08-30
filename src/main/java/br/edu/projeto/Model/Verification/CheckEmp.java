@@ -15,7 +15,7 @@ import javax.persistence.Persistence;
  *
  * @author qwert
  */
-public class CheckEmp {
+public class CheckEmp {//Regra de negócio
     int number = 3;
     EntityManagerFactory factory = 
                 Persistence.createEntityManagerFactory("Hibernate");

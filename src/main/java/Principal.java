@@ -1,6 +1,7 @@
 
 
 
+import br.edu.projeto.Model.Verification.Check;
 import br.edu.projeto.View.view.Display;
 import br.edu.projeto.View.view.RegisterEmp;
 
@@ -33,8 +34,11 @@ public class Principal {
         display.getContentPane().setBackground(Color.BLACK);
         display.setVisible(true);*/
         
-        RegisterEmp emp = new RegisterEmp();
+        /*RegisterEmp emp = new RegisterEmp();
         emp.getContentPane().setBackground(Color.BLACK);
-        emp.setVisible(true);
+        emp.setVisible(true);*/
+        
+        Check check = new Check();
+        check.CheckUser("lucas");
     }
 }
