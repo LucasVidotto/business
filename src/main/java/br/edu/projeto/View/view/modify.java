@@ -76,6 +76,11 @@ public class modify extends javax.swing.JFrame {
         jMenu1.setText("MENU");
 
         jMenuItem1.setText("MENU");
+        jMenuItem1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem1ActionPerformed(evt);
+            }
+        });
         jMenu1.add(jMenuItem1);
 
         jMenuBar1.add(jMenu1);
@@ -136,7 +141,7 @@ public class modify extends javax.swing.JFrame {
        String save2 = String.valueOf(jPasswordField3.getPassword());
        String pass = String.valueOf(jPasswordField1.getPassword());
        int aux = 0; String name = ""; String password =""; int phone = 0; 
-       String post = ""; double sal = 0; String user = "";
+       String post = ""; double sal = 0; String user = "";long id = 0;
        
        saveEmp se = new saveEmp();
        FindGeral fg = new FindGeral();
@@ -147,8 +152,8 @@ public class modify extends javax.swing.JFrame {
               
               name = emp.getName(); phone = emp.getPhone();
               post = emp.getPost(); sal = emp.getSalary(); user = emp.getUserName();
-              
-              se.removerEmployee(emp,emp.getId());
+              id = emp.getId();
+              //se.removerEmployee(emp,emp.getId());
               
               aux = 1;
           }else{
@@ -156,23 +161,23 @@ public class modify extends javax.swing.JFrame {
           }
            
        }
-       if(aux == 1){JOptionPane.showMessageDialog(null,"iguais");
+       if(aux == 1){
             em.setName(name);
             em.setPhone(phone);
             em.setPost(post);
             em.setSalary(sal);
             em.setUserName(user);
-            
-        }else{JOptionPane.showMessageDialog(null,"fodeu");
+            em.setId(id);
+        }else{
             
                 
         }
        if(save1.equals(save2)){
-           JOptionPane.showMessageDialog(null,"iguais");
+           //JOptionPane.showMessageDialog(null,"iguais");
            em.setPassword(save1);
            se.adicionarEmployee(em);
        }else{
-           JOptionPane.showMessageDialog(null,"não iguais");
+           //JOptionPane.showMessageDialog(null,"não iguais");
        }
     }//GEN-LAST:event_jButton1ActionPerformed
 
@@ -181,6 +186,14 @@ public class modify extends javax.swing.JFrame {
         jPasswordField2.setText("");
         jPasswordField3.setText("");
     }//GEN-LAST:event_jButton2ActionPerformed
+
+    private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
+                MenuEmp men = new MenuEmp();
+                men.setSize(500,400);
+                men.getContentPane().setBackground(Color.BLACK);
+                men.setVisible(true);
+                dispose();
+    }//GEN-LAST:event_jMenuItem1ActionPerformed
 
     /**
      * @param args the command line arguments

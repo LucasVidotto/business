@@ -24,9 +24,22 @@ public class saveEmp implements DAOEMployee{
         
     @Override
     public void adicionarEmployee(Employee emp) {
-        manager.getTransaction().begin();
-        manager.persist(emp);
-        manager.getTransaction().commit();
+        
+        try{
+             manager.getTransaction().begin();
+             if(emp.getId( )== null){
+                 manager.persist(emp);
+             }else{
+                 manager.merge(emp);
+
+             }
+             manager.getTransaction().commit();
+        }catch (Exception e) {
+			System.err.println(e);
+			manager.getTransaction().rollback();
+        }finally {
+			//factory.close();
+        }
     }
 
     @Override

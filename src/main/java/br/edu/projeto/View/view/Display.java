@@ -37,7 +37,7 @@ public class Display extends javax.swing.JFrame {
         for(Client cli :fin.findAll()){
             for(Logado log:fg.findLogado()){
                 if(cli.getId() == log.getCode()){
-                    System.out.println("entrouuuuuuuuu");
+                    //System.out.println("entrouuuuuuuuu");
 
                     jLabel2.setText(cli.getName());
                     jLabel6.setText(cli.getUserName());
@@ -237,21 +237,7 @@ public class Display extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void DISPLAYActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DISPLAYActionPerformed
-        dateacess dt = new dateacess();
-        Find find = new Find();
-        String aux = "";
-        String senha = "";
-        String name ="",userName ="",email ="";
-        int cpf = 0,phone =0;
         
-        //jLabel2.setText(cd.getName());
-          
-        
-        /*jTextField1.setText(cd.getName());
-        System.out.println("name : "+cd.getName()); */
-        
-        register lo = new register();
-        lo.setVisible(false);
     }//GEN-LAST:event_DISPLAYActionPerformed
 
     /**

@@ -96,10 +96,10 @@ public class Products extends javax.swing.JFrame {
         });
 
         jLabel2.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
-        jLabel2.setText("Notebook2 intel I5 ssd240GB");
+        jLabel2.setText("Notebook2 intel I3 ssd240GB");
 
         jLabel4.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
-        jLabel4.setText("Notebook intel I3 ssd120GB");
+        jLabel4.setText("Notebook intel I5 ssd120GB");
 
         Buy2.setText("Buy");
         Buy2.addActionListener(new java.awt.event.ActionListener() {

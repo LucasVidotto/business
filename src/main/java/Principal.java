@@ -25,20 +25,10 @@ import javax.swing.JOptionPane;
  */
 public class Principal {
     public static void main(String[] args) {
-       /*EntityManagerFactory entityManagerFactory = Persistence
+       EntityManagerFactory entityManagerFactory = Persistence
         .createEntityManagerFactory("Hibernate");
-        EntityManager entityManager = entityManagerFactory.createEntityManager();*/
+        EntityManager entityManager = entityManagerFactory.createEntityManager();
     
-        /*Display display = new Display();
-        display.setSize(500,400);
-        display.getContentPane().setBackground(Color.BLACK);
-        display.setVisible(true);*/
-        
-        /*RegisterEmp emp = new RegisterEmp();
-        emp.getContentPane().setBackground(Color.BLACK);
-        emp.setVisible(true);*/
-        
-        Check check = new Check();
-        check.CheckUser("lucas");
+ 
     }
 }

@@ -84,6 +84,7 @@ public class Main extends javax.swing.JFrame {
         men.setSize(500,400);
         men.getContentPane().setBackground(Color.black);
         men.setVisible(true);
+        dispose();
     }//GEN-LAST:event_jButton2ActionPerformed
 
     /**

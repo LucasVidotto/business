@@ -127,7 +127,7 @@ public class MenuTwo extends javax.swing.JFrame {
         }
         
         if(aux == 1){
-            MenuOne men = new MenuOne();
+                MenuEmp men = new MenuEmp();
                 men.setSize(500,400);
                 men.getContentPane().setBackground(Color.BLACK);
                 men.setVisible(true);

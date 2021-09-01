@@ -88,13 +88,17 @@ public class Prod2 extends javax.swing.JFrame {
 
         jPanel5.setLayout(new java.awt.BorderLayout());
 
-        jLabel1.setText("Produto 6");
+        jLabel1.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        jLabel1.setText("Hyper X");
 
-        jLabel2.setText("Produto 5");
+        jLabel2.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        jLabel2.setText("Headset Havit");
 
-        jLabel3.setText("Produto 7");
+        jLabel3.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        jLabel3.setText("Havit 2");
 
-        jLabel4.setText("Produto 8");
+        jLabel4.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        jLabel4.setText("Headset Surrou");
 
         jButton1.setText("BUY");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
@@ -127,19 +131,19 @@ public class Prod2 extends javax.swing.JFrame {
         jLabel5.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
         jLabel5.setText("Quantidade");
 
-        jLabel6.setText("Preço");
+        jLabel6.setText("R$ 1.100,00 ");
 
         jLabel7.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
         jLabel7.setText("Quantidade");
 
-        jLabel8.setText("Preço");
+        jLabel8.setText("R$ 1.200");
 
         jLabel9.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
         jLabel9.setText("Quantidade");
 
-        jLabel10.setText("Preço");
+        jLabel10.setText("R$ 999");
 
-        jLabel11.setText("Preço");
+        jLabel11.setText("R$ 890 ");
 
         jLabel12.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
         jLabel12.setText("Quantidade");
@@ -318,7 +322,7 @@ public class Prod2 extends javax.swing.JFrame {
         int quanti = (int) jSpinner1.getValue();
         int num;
         
-        num = sfind.FindProduct(3499,quanti);
+        num = sfind.FindProduct(1100,quanti);
         
         System.out.println(" Num Num Num: "+num);
         
@@ -338,7 +342,7 @@ public class Prod2 extends javax.swing.JFrame {
         int quanti = (int) jSpinner2.getValue();
         int num;
         
-        num = sfind.FindProduct(3499,quanti);
+        num = sfind.FindProduct(1200,quanti);
         
         System.out.println(" Num Num Num: "+num);
         
@@ -358,7 +362,7 @@ public class Prod2 extends javax.swing.JFrame {
         int quanti = (int) jSpinner4.getValue();
         int num;
         
-        num = sfind.FindProduct(3499,quanti);
+        num = sfind.FindProduct(890,quanti);
         
         System.out.println(" Num Num Num: "+num);
         
@@ -378,7 +382,7 @@ public class Prod2 extends javax.swing.JFrame {
         int quanti = (int) jSpinner3.getValue();
         int num;
         
-        num = sfind.FindProduct(3499,quanti);
+        num = sfind.FindProduct(999,quanti);
         
         System.out.println(" Num Num Num: "+num);
         

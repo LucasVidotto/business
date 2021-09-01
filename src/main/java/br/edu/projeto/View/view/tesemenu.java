@@ -71,12 +71,13 @@ public class tesemenu {
         /*register reg = new register();
         reg.setVisible(true);*/
         
-       MenuOne men = new MenuOne();
-        men.setSize(500,400);
-        men.getContentPane().setBackground(Color.BLACK);
-        men.setVisible(true);
-        
-        
+        /*Main main = new Main();
+        main.setSize(500,400);
+        main.setVisible(true);*/
+        Main main = new Main();
+        main.getContentPane().setBackground(Color.black);
+         main.setSize(500,400);
+        main.setVisible(true);
     }
     
 }

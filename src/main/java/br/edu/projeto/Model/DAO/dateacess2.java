@@ -32,6 +32,7 @@ public class dateacess2 implements DAOProduct{
         manager.getTransaction().begin();
         manager.persist(pro);
         manager.getTransaction().commit();
+        
         //factory.close();
         
         //factory.close();
