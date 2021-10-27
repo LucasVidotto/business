@@ -1,6 +1,7 @@
 
 
 
+import br.edu.projeto.Model.DAO.AcessoLogado;
 import br.edu.projeto.Model.Verification.Check;
 import br.edu.projeto.View.view.Display;
 import br.edu.projeto.View.view.RegisterEmp;
@@ -25,10 +26,9 @@ import javax.swing.JOptionPane;
  */
 public class Principal {
     public static void main(String[] args) {
-       EntityManagerFactory entityManagerFactory = Persistence
-        .createEntityManagerFactory("Hibernate");
-        EntityManager entityManager = entityManagerFactory.createEntityManager();
-    
+      
+        
+
  
     }
 }

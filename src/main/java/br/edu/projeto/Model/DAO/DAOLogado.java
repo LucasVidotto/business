@@ -6,6 +6,7 @@
 package br.edu.projeto.Model.DAO;
 
 import br.edu.projeto.Model.Vo.Logado;
+import br.edu.projeto.Model.Vo.Product;
 
 /**
  *
@@ -18,5 +19,7 @@ public interface DAOLogado {
     public void Deslogar(Logado log, long id);
     
     public void closed();
+    
+    public Long FindLog();
     
 }

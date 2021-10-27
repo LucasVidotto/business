@@ -7,10 +7,12 @@ package br.edu.projeto.Model.DAO;
 
 import br.edu.projeto.Model.Vo.Client;
 import br.edu.projeto.Model.Vo.Logado;
+import br.edu.projeto.Model.Vo.Product;
 import java.util.List;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
+import javax.persistence.Query;
 import javax.persistence.TypedQuery;
 
 /**
@@ -48,7 +50,28 @@ public class AcessoLogado implements DAOLogado{
         //factory.close();
     }
     
-    
+    public Long FindLog( ){
+      Long id = null;
+      Query cli = manager.createQuery("select client from Client client");
+
+      List<Client> resultList = cli.getResultList();
+      
+      Query log = manager.createQuery("select logado from Logado logado");
+
+      List<Logado> resultList2 = log.getResultList();
+
+      for(Logado lg: resultList2){
+          for(Client cl: resultList){
+              
+               if(lg.getCode()== cl.getId()){
+                    id = cl.getId();
+                    
+                }
+          }
+      }
+      
+      return id;
+    }
     
     public void closed(){
         factory.close();

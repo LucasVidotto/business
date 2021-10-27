@@ -8,8 +8,6 @@ import br.edu.projeto.Model.DAO.BuyItem;
 import br.edu.projeto.Model.DAO.dateacess;
 import br.edu.projeto.Model.DAO.dateacess2;
 import br.edu.projeto.Model.DAO.salesave;
-
-
 import br.edu.projeto.Model.Vo.Client;
 import br.edu.projeto.Model.Vo.Logado;
 import br.edu.projeto.Model.Vo.Product;
@@ -44,7 +42,20 @@ public class Products extends javax.swing.JFrame {
        this.jPanel3.add(canva3);
        // jScrollBar1.setBounds(500, 1, 20, 380);
         //jScrollBar1.add(Fundo);
+       
+       Product product = new Product();
+       BuyItem sfind = new BuyItem();
+       
+       String name;
         
+       name = sfind.FindProduct(3499);
+       Note1.setText(name);
+        
+       name = sfind.FindProduct(6999);
+       Note2.setText(name);
+       
+       name = sfind.FindProduct(3320);
+       Note3.setText(name);
     }
 
     
@@ -59,9 +70,9 @@ public class Products extends javax.swing.JFrame {
         jMenu2 = new javax.swing.JMenu();
         Buy = new javax.swing.JButton();
         jSpinner1 = new javax.swing.JSpinner();
-        jLabel2 = new javax.swing.JLabel();
+        Note3 = new javax.swing.JLabel();
         jSpinner2 = new javax.swing.JSpinner();
-        jLabel4 = new javax.swing.JLabel();
+        Note1 = new javax.swing.JLabel();
         Buy2 = new javax.swing.JButton();
         jLabel5 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
@@ -70,7 +81,7 @@ public class Products extends javax.swing.JFrame {
         jPanel1 = new javax.swing.JPanel();
         jPanel2 = new javax.swing.JPanel();
         jPanel3 = new javax.swing.JPanel();
-        jLabel9 = new javax.swing.JLabel();
+        Note2 = new javax.swing.JLabel();
         Buy1 = new javax.swing.JButton();
         jSpinner3 = new javax.swing.JSpinner();
         jLabel11 = new javax.swing.JLabel();
@@ -91,20 +102,18 @@ public class Products extends javax.swing.JFrame {
         Buy.setText("Buy");
         Buy.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                BuyActionPerformed(evt);
+                BuyOne(evt);
             }
         });
 
-        jLabel2.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
-        jLabel2.setText("Notebook2 intel I3 ssd240GB");
+        Note3.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
 
-        jLabel4.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
-        jLabel4.setText("Notebook intel I5 ssd120GB");
+        Note1.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
 
         Buy2.setText("Buy");
         Buy2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Buy2ActionPerformed(evt);
+                BuyThree(evt);
             }
         });
 
@@ -126,13 +135,12 @@ public class Products extends javax.swing.JFrame {
 
         jPanel3.setLayout(new java.awt.BorderLayout());
 
-        jLabel9.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
-        jLabel9.setText("Notebook intel I7 ssd120GB");
+        Note2.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
 
         Buy1.setText("Buy");
         Buy1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Buy1ActionPerformed(evt);
+                BuyTwo(evt);
             }
         });
 
@@ -176,10 +184,10 @@ public class Products extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addGap(14, 14, 14)
-                        .addComponent(jLabel4))
+                        .addComponent(Note1))
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(Note3, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -193,7 +201,7 @@ public class Products extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addGap(17, 17, 17)
-                        .addComponent(jLabel9))
+                        .addComponent(Note2))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(1, 1, 1)
                         .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -214,8 +222,8 @@ public class Products extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel4)
-                    .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 17, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(Note1)
+                    .addComponent(Note2, javax.swing.GroupLayout.PREFERRED_SIZE, 17, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 201, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -242,8 +250,8 @@ public class Products extends javax.swing.JFrame {
                                 .addComponent(Buy1))))
                     .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, 201, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(6, 6, 6)
-                .addComponent(jLabel2)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 28, Short.MAX_VALUE)
+                .addComponent(Note3)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 45, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(layout.createSequentialGroup()
@@ -259,7 +267,7 @@ public class Products extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void BuyActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BuyActionPerformed
+    private void BuyOne(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BuyOne
         Product product = new Product();
         BuyItem sfind = new BuyItem();
         int quanti = (int) jSpinner2.getValue();
@@ -282,9 +290,9 @@ public class Products extends javax.swing.JFrame {
         JOptionPane.showConfirmDialog(null,"desc: "+product.getDescription() );
         JOptionPane.showConfirmDialog(null,"prico: "+product.getPrice());*/
         
-    }//GEN-LAST:event_BuyActionPerformed
+    }//GEN-LAST:event_BuyOne
 
-    private void Buy2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Buy2ActionPerformed
+    private void BuyThree(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BuyThree
         Product product = new Product();
         BuyItem sfind = new BuyItem();
         int quanti = (int) jSpinner1.getValue();
@@ -303,7 +311,7 @@ public class Products extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(null,"alguma coisa deu errado");
         }
         
-    }//GEN-LAST:event_Buy2ActionPerformed
+    }//GEN-LAST:event_BuyThree
 
     private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
         Menu menu = new Menu();
@@ -312,7 +320,7 @@ public class Products extends javax.swing.JFrame {
         dispose();
     }//GEN-LAST:event_jMenuItem1ActionPerformed
 
-    private void Buy1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Buy1ActionPerformed
+    private void BuyTwo(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BuyTwo
         Product product = new Product();
         BuyItem sfind = new BuyItem();
         int quanti = (int) jSpinner3.getValue();
@@ -337,7 +345,7 @@ public class Products extends javax.swing.JFrame {
         pur.setVisible(true);
         dispose();*/
 
-    }//GEN-LAST:event_Buy1ActionPerformed
+    }//GEN-LAST:event_BuyTwo
 
     
     public static void main(String args[]) {
@@ -382,15 +390,15 @@ public class Products extends javax.swing.JFrame {
     private javax.swing.JButton Buy;
     private javax.swing.JButton Buy1;
     private javax.swing.JButton Buy2;
+    private javax.swing.JLabel Note1;
+    private javax.swing.JLabel Note2;
+    private javax.swing.JLabel Note3;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
-    private javax.swing.JLabel jLabel9;
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu2;
     private javax.swing.JMenu jMenu5;
