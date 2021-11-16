@@ -2,7 +2,7 @@
 
 
 import br.edu.projeto.Model.DAO.AcessoLogado;
-import br.edu.projeto.Model.Verification.Check;
+import br.edu.projeto.Model.Verification.RN.Check;
 import br.edu.projeto.View.view.Display;
 import br.edu.projeto.View.view.RegisterEmp;
 

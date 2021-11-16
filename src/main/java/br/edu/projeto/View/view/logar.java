@@ -32,9 +32,7 @@ public class logar extends javax.swing.JFrame {
     public logar() {
         initComponents();
         
-        /*canvas canva = new canvas();
-        
-        this.jPanelImgFundo.add(canva);*/
+       
     }
     
     @SuppressWarnings("unchecked")
@@ -49,6 +47,7 @@ public class logar extends javax.swing.JFrame {
         jTextField1 = new javax.swing.JTextField();
         jLabel3 = new javax.swing.JLabel();
         jPasswordField1 = new javax.swing.JPasswordField();
+        jCheckBox1 = new javax.swing.JCheckBox();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
         Back = new javax.swing.JMenuItem();
@@ -83,6 +82,19 @@ public class logar extends javax.swing.JFrame {
         jLabel3.setForeground(new java.awt.Color(255, 255, 255));
         jLabel3.setText("LOGIN");
 
+        jPasswordField1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jPasswordField1ActionPerformed(evt);
+            }
+        });
+
+        jCheckBox1.setText("SHOW");
+        jCheckBox1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jCheckBox1ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout painelImagemFundo1Layout = new javax.swing.GroupLayout(painelImagemFundo1);
         painelImagemFundo1.setLayout(painelImagemFundo1Layout);
         painelImagemFundo1Layout.setHorizontalGroup(
@@ -101,7 +113,9 @@ public class logar extends javax.swing.JFrame {
                         .addGap(94, 94, 94))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, painelImagemFundo1Layout.createSequentialGroup()
                         .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(177, 177, 177))
+                        .addGap(18, 18, 18)
+                        .addComponent(jCheckBox1)
+                        .addGap(68, 68, 68))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, painelImagemFundo1Layout.createSequentialGroup()
                         .addComponent(jLabel3)
                         .addGap(200, 200, 200))))
@@ -121,7 +135,9 @@ public class logar extends javax.swing.JFrame {
                             .addComponent(jPasswordField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel2))))
                 .addGap(54, 54, 54)
-                .addComponent(jButton2)
+                .addGroup(painelImagemFundo1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jButton2)
+                    .addComponent(jCheckBox1))
                 .addContainerGap(125, Short.MAX_VALUE))
         );
 
@@ -261,6 +277,24 @@ public class logar extends javax.swing.JFrame {
         dispose();
     }//GEN-LAST:event_BackActionPerformed
 
+    private void jCheckBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBox1ActionPerformed
+         if(jPasswordField1.getEchoChar() == '*'){
+             
+            jPasswordField1.setEchoChar((char) 0);
+            
+	}else{
+             
+            jPasswordField1.setEchoChar('*');
+				
+         }
+         
+         
+    }//GEN-LAST:event_jCheckBox1ActionPerformed
+
+    private void jPasswordField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jPasswordField1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jPasswordField1ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -300,6 +334,7 @@ public class logar extends javax.swing.JFrame {
     private javax.swing.JMenuItem Back;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
+    private javax.swing.JCheckBox jCheckBox1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
