@@ -1,6 +1,7 @@
 package br.edu.projeto.View.view;
 
 import java.awt.Color;
+import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
 
 /*
@@ -42,7 +43,10 @@ public class Menu extends javax.swing.JFrame {
         jMenuItem1 = new javax.swing.JMenuItem();
         jCheckBoxMenuItem1 = new javax.swing.JCheckBoxMenuItem();
         jPanel1 = new javax.swing.JPanel();
+        painelImagemFundo2 = new br.edu.projeto.View.view.PainelImagemFundo();
         jMenuBar1 = new javax.swing.JMenuBar();
+        jMenu5 = new javax.swing.JMenu();
+        jMenu7 = new javax.swing.JMenu();
         Register = new javax.swing.JMenu();
         Reg = new javax.swing.JMenuItem();
         Login = new javax.swing.JMenu();
@@ -75,10 +79,30 @@ public class Menu extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(0, 0, 0));
 
-        jMenuBar1.setBackground(new java.awt.Color(0, 0, 0));
+        painelImagemFundo2.setImg(new ImageIcon("src/main/java/br/edu/projeto/View/img/menub.jpg"));
+
+        javax.swing.GroupLayout painelImagemFundo2Layout = new javax.swing.GroupLayout(painelImagemFundo2);
+        painelImagemFundo2.setLayout(painelImagemFundo2Layout);
+        painelImagemFundo2Layout.setHorizontalGroup(
+            painelImagemFundo2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 502, Short.MAX_VALUE)
+        );
+        painelImagemFundo2Layout.setVerticalGroup(
+            painelImagemFundo2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 381, Short.MAX_VALUE)
+        );
+
+        jMenuBar1.setBackground(new java.awt.Color(54, 54, 54));
+        jMenuBar1.setForeground(new java.awt.Color(54, 54, 54));
         jMenuBar1.setToolTipText("");
 
-        Register.setForeground(new java.awt.Color(0, 0, 204));
+        jMenu5.setText("       ");
+        jMenuBar1.add(jMenu5);
+
+        jMenu7.setText("                       ");
+        jMenuBar1.add(jMenu7);
+
+        Register.setForeground(new java.awt.Color(255, 255, 255));
         Register.setText("Register");
         Register.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -89,14 +113,14 @@ public class Menu extends javax.swing.JFrame {
         Reg.setText("Register");
         Reg.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                RegActionPerformed(evt);
+                Register(evt);
             }
         });
         Register.add(Reg);
 
         jMenuBar1.add(Register);
 
-        Login.setForeground(new java.awt.Color(0, 0, 204));
+        Login.setForeground(new java.awt.Color(255, 255, 255));
         Login.setText("Login");
         Login.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -107,27 +131,27 @@ public class Menu extends javax.swing.JFrame {
         Log.setText("Login");
         Log.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                LogActionPerformed(evt);
+                Login(evt);
             }
         });
         Login.add(Log);
 
         jMenuBar1.add(Login);
 
-        jMenu2.setForeground(new java.awt.Color(0, 0, 204));
+        jMenu2.setForeground(new java.awt.Color(255, 255, 255));
         jMenu2.setText("Products");
 
         jMenuItem2.setText("Product");
         jMenuItem2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuItem2ActionPerformed(evt);
+                Product(evt);
             }
         });
         jMenu2.add(jMenuItem2);
 
         jMenuBar1.add(jMenu2);
 
-        jMenu3.setForeground(new java.awt.Color(0, 0, 204));
+        jMenu3.setForeground(new java.awt.Color(255, 255, 255));
         jMenu3.setText("Display");
         jMenu3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -138,20 +162,20 @@ public class Menu extends javax.swing.JFrame {
         jMenuItem3.setText("Display");
         jMenuItem3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuItem3ActionPerformed(evt);
+                Display(evt);
             }
         });
         jMenu3.add(jMenuItem3);
 
         jMenuBar1.add(jMenu3);
 
-        jMenu4.setForeground(new java.awt.Color(0, 0, 204));
+        jMenu4.setForeground(new java.awt.Color(255, 255, 255));
         jMenu4.setText(" Change");
 
         jMenuItem4.setText("Change");
         jMenuItem4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuItem4ActionPerformed(evt);
+                Change(evt);
             }
         });
         jMenu4.add(jMenuItem4);
@@ -164,11 +188,15 @@ public class Menu extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 500, Short.MAX_VALUE)
+            .addGap(0, 502, Short.MAX_VALUE)
+            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addComponent(painelImagemFundo2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 379, Short.MAX_VALUE)
+            .addGap(0, 381, Short.MAX_VALUE)
+            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addComponent(painelImagemFundo2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         pack();
@@ -182,41 +210,44 @@ public class Menu extends javax.swing.JFrame {
         
     }//GEN-LAST:event_LoginActionPerformed
 
-    private void RegActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RegActionPerformed
+    private void Register(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Register
         register reg = new register();
         reg.setVisible(true);
         dispose();
-    }//GEN-LAST:event_RegActionPerformed
+    }//GEN-LAST:event_Register
 
-    private void LogActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_LogActionPerformed
+    private void Login(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Login
         logar log = new logar();
         log.setSize(500,500);
         log.setVisible(true);
         dispose();
-    }//GEN-LAST:event_LogActionPerformed
+    }//GEN-LAST:event_Login
 
-    private void jMenuItem2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem2ActionPerformed
+    private void Product(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Product
         Products pro = new Products();
         pro.setSize(535,430);
         pro.setVisible(true);
         dispose();
-    }//GEN-LAST:event_jMenuItem2ActionPerformed
+    }//GEN-LAST:event_Product
 
-    private void jMenuItem3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem3ActionPerformed
-        JOptionPane.showMessageDialog(null, "alert", "Maintenance", JOptionPane.ERROR_MESSAGE);
-    }//GEN-LAST:event_jMenuItem3ActionPerformed
+    private void Display(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Display
+        Display display = new Display();
+        display.setSize(500,450);
+        display.setVisible(true);
+        dispose();
+    }//GEN-LAST:event_Display
 
     private void jMenu3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenu3ActionPerformed
         JOptionPane.showMessageDialog(null, "alert", "Maintenance", JOptionPane.ERROR_MESSAGE);
     }//GEN-LAST:event_jMenu3ActionPerformed
 
-    private void jMenuItem4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem4ActionPerformed
+    private void Change(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Change
        Change alt = new Change();
        alt.setSize(500,400);
        alt.getContentPane().setBackground(Color.BLACK);
        alt.setVisible(true);
        dispose();
-    }//GEN-LAST:event_jMenuItem4ActionPerformed
+    }//GEN-LAST:event_Change
 
     /**
      * @param args the command line arguments
@@ -265,11 +296,14 @@ public class Menu extends javax.swing.JFrame {
     private javax.swing.JMenu jMenu2;
     private javax.swing.JMenu jMenu3;
     private javax.swing.JMenu jMenu4;
+    private javax.swing.JMenu jMenu5;
+    private javax.swing.JMenu jMenu7;
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JMenuItem jMenuItem1;
     private javax.swing.JMenuItem jMenuItem2;
     private javax.swing.JMenuItem jMenuItem3;
     private javax.swing.JMenuItem jMenuItem4;
     private javax.swing.JPanel jPanel1;
+    private br.edu.projeto.View.view.PainelImagemFundo painelImagemFundo2;
     // End of variables declaration//GEN-END:variables
 }

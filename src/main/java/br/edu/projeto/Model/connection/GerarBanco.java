@@ -5,7 +5,6 @@
  */
 package br.edu.projeto.Model.connection;
 
-import com.mysql.jdbc.PreparedStatement;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;

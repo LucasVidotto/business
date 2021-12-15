@@ -34,10 +34,10 @@ public class tesemenu {
         log.setSize(400,380);
         log.setVisible(true);*/
         
-        /*Menu menu = new Menu();
-        menu.setSize(428,400);
-        menu.getContentPane().setBackground(Color.RED);
-        menu.setVisible(true);*/
+        Menu menu = new Menu();
+        menu.setSize(500,400);
+        //menu.getContentPane().setBackground(Color.RED);
+        menu.setVisible(true);
         
         /*dateacess date = new dateacess();
         Client cli = new Client();
@@ -73,11 +73,11 @@ public class tesemenu {
         
         /*Main main = new Main();
         main.setSize(500,400);
-        main.setVisible(true);*/
+        main.setVisible(true);
         Main main = new Main();
         main.getContentPane().setBackground(Color.black);
          main.setSize(500,400);
-        main.setVisible(true);
+        main.setVisible(true);*/
     }
     
 }
