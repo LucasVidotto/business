@@ -60,6 +60,11 @@ public class Display extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+<<<<<<< HEAD
+=======
+        jScrollPane1 = new javax.swing.JScrollPane();
+        jTable1 = new javax.swing.JTable();
+>>>>>>> 8ade0a71884f860c9494c2dd1e6010aee14119eb
         painelImagemFundo1 = new br.edu.projeto.View.view.PainelImagemFundo();
         jLabel8 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
@@ -82,10 +87,30 @@ public class Display extends javax.swing.JFrame {
         jMenu5 = new javax.swing.JMenu();
         jMenu6 = new javax.swing.JMenu();
 
+<<<<<<< HEAD
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         painelImagemFundo1.setImg(new ImageIcon("src/main/java/br/edu/projeto/View/img/menub.jpg"));
 
+=======
+        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
+            },
+            new String [] {
+                "Title 1", "Title 2", "Title 3", "Title 4"
+            }
+        ));
+        jScrollPane1.setViewportView(jTable1);
+
+        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+
+        painelImagemFundo1.setImg(new ImageIcon("src/main/java/br/edu/projeto/View/img/menub.jpg"));
+
+>>>>>>> 8ade0a71884f860c9494c2dd1e6010aee14119eb
         jLabel8.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
         jLabel8.setForeground(new java.awt.Color(255, 255, 255));
         jLabel8.setText("Email");
@@ -109,6 +134,7 @@ public class Display extends javax.swing.JFrame {
         jLabel9.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
         jLabel9.setForeground(new java.awt.Color(255, 255, 255));
         jLabel9.setText("Phone");
+<<<<<<< HEAD
 
         LabelCPF.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
         LabelCPF.setForeground(new java.awt.Color(255, 255, 255));
@@ -126,6 +152,25 @@ public class Display extends javax.swing.JFrame {
         LabelUser.setForeground(new java.awt.Color(255, 255, 255));
         LabelUser.setText("jLabel6");
 
+=======
+
+        LabelCPF.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
+        LabelCPF.setForeground(new java.awt.Color(255, 255, 255));
+        LabelCPF.setText("jLabel13");
+
+        LabelName.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
+        LabelName.setForeground(new java.awt.Color(255, 255, 255));
+        LabelName.setText("Name : ");
+
+        Labelname.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
+        Labelname.setForeground(new java.awt.Color(255, 255, 255));
+        Labelname.setText("jLabel2");
+
+        LabelUser.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
+        LabelUser.setForeground(new java.awt.Color(255, 255, 255));
+        LabelUser.setText("jLabel6");
+
+>>>>>>> 8ade0a71884f860c9494c2dd1e6010aee14119eb
         LabelEmail.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
         LabelEmail.setForeground(new java.awt.Color(255, 255, 255));
         LabelEmail.setText("jLabel11");
@@ -143,7 +188,11 @@ public class Display extends javax.swing.JFrame {
         painelImagemFundo1Layout.setHorizontalGroup(
             painelImagemFundo1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(painelImagemFundo1Layout.createSequentialGroup()
+<<<<<<< HEAD
                 .addContainerGap(187, Short.MAX_VALUE)
+=======
+                .addContainerGap(129, Short.MAX_VALUE)
+>>>>>>> 8ade0a71884f860c9494c2dd1e6010aee14119eb
                 .addGroup(painelImagemFundo1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, painelImagemFundo1Layout.createSequentialGroup()
                         .addGroup(painelImagemFundo1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -155,6 +204,7 @@ public class Display extends javax.swing.JFrame {
                             .addComponent(jLabel9))
                         .addGap(38, 38, 38)
                         .addGroup(painelImagemFundo1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+<<<<<<< HEAD
                             .addGroup(painelImagemFundo1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                 .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, painelImagemFundo1Layout.createSequentialGroup()
                                     .addGap(2, 2, 2)
@@ -168,6 +218,19 @@ public class Display extends javax.swing.JFrame {
                                 .addComponent(Labelname, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addComponent(LabelPass, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addGap(110, 110, 110))
+=======
+                            .addComponent(LabelEmail, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(painelImagemFundo1Layout.createSequentialGroup()
+                                .addGap(2, 2, 2)
+                                .addGroup(painelImagemFundo1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(LabelCPF, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(LabelPhone, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addGroup(painelImagemFundo1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                .addComponent(LabelUser, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(Labelname, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                            .addComponent(LabelPass, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(168, 168, 168))
+>>>>>>> 8ade0a71884f860c9494c2dd1e6010aee14119eb
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, painelImagemFundo1Layout.createSequentialGroup()
                         .addComponent(jLabel1)
                         .addGap(139, 139, 139))))
@@ -213,6 +276,7 @@ public class Display extends javax.swing.JFrame {
 
         jMenu1.setText("                                   ");
         jMenuBar1.add(jMenu1);
+<<<<<<< HEAD
 
         jMenu2.setForeground(new java.awt.Color(240, 240, 240));
         jMenu2.setText("Menu");
@@ -222,6 +286,17 @@ public class Display extends javax.swing.JFrame {
         jMenu3.setText("Change");
         jMenuBar1.add(jMenu3);
 
+=======
+
+        jMenu2.setForeground(new java.awt.Color(240, 240, 240));
+        jMenu2.setText("Menu");
+        jMenuBar1.add(jMenu2);
+
+        jMenu3.setForeground(new java.awt.Color(240, 240, 240));
+        jMenu3.setText("Change");
+        jMenuBar1.add(jMenu3);
+
+>>>>>>> 8ade0a71884f860c9494c2dd1e6010aee14119eb
         jMenu4.setForeground(new java.awt.Color(240, 240, 240));
         jMenu4.setText("Products");
         jMenuBar1.add(jMenu4);
@@ -305,6 +380,11 @@ public class Display extends javax.swing.JFrame {
     private javax.swing.JMenu jMenu5;
     private javax.swing.JMenu jMenu6;
     private javax.swing.JMenuBar jMenuBar1;
+<<<<<<< HEAD
+=======
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JTable jTable1;
+>>>>>>> 8ade0a71884f860c9494c2dd1e6010aee14119eb
     private br.edu.projeto.View.view.PainelImagemFundo painelImagemFundo1;
     // End of variables declaration//GEN-END:variables
 }

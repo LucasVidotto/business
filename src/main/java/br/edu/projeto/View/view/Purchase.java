@@ -6,8 +6,10 @@
 package br.edu.projeto.View.view;
 
 
+import br.edu.projeto.Model.DAO.AcessoLogado;
 import br.edu.projeto.Model.DAO.Find;
 import br.edu.projeto.Model.DAO.FindGeral;
+import br.edu.projeto.Model.DAO.Pay;
 import br.edu.projeto.Model.Vo.Client;
 import br.edu.projeto.Model.Vo.Logado;
 import br.edu.projeto.Model.Vo.Sale;
@@ -28,13 +30,14 @@ public class Purchase extends javax.swing.JFrame {
         
         FindGeral fg = new FindGeral();
         String total = "";
+        double aux = 0;
         
         Find find = new Find();
         
 
         for(Sale sale:fg.findSale()){
-            total =  Double.toString(sale.getTotal());
-             jTextField1.setText(total);   
+            //
+              aux += sale.getTotal();
              
             for(Client cli:find.findAll()){
                 for(Logado log:fg.findLogado()){
@@ -44,6 +47,8 @@ public class Purchase extends javax.swing.JFrame {
                 }
             }
         }
+        total =  Double.toString(aux);
+        jTextField1.setText(total); 
     }
     
    
@@ -226,7 +231,13 @@ public class Purchase extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void PayActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PayActionPerformed
-        // TODO add your handling code here:
+        AcessoLogado acs = new AcessoLogado();
+        Long num = null;
+        num = acs.FindLog();
+        
+        Pay payy = new Pay();
+        payy.ToPay(num);
+        
     }//GEN-LAST:event_PayActionPerformed
 
     private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed

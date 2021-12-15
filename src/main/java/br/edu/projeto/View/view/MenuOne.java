@@ -53,7 +53,7 @@ public class MenuOne extends javax.swing.JFrame {
         jButton1.setText("Register");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                Register(evt);
             }
         });
 
@@ -62,7 +62,7 @@ public class MenuOne extends javax.swing.JFrame {
         jButton2.setText("Login");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
+                Login(evt);
             }
         });
 
@@ -119,21 +119,21 @@ public class MenuOne extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+    private void Login(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Login
         logar log = new logar();
         log.setSize(500,400);
         log.getContentPane().setBackground(Color.BLACK);
         log.setVisible(true);
         dispose();
-    }//GEN-LAST:event_jButton2ActionPerformed
+    }//GEN-LAST:event_Login
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void Register(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Register
         register gis = new register();
         gis.setSize(500,400);
         gis.getContentPane().setBackground(Color.BLACK);
         gis.setVisible(true);
         dispose();
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_Register
 
     /**
      * @param args the command line arguments

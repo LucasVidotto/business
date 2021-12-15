@@ -100,7 +100,11 @@
             <Property name="text" type="java.lang.String" value="Register"/>
           </Properties>
           <Events>
+<<<<<<< HEAD
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton1ActionPerformed"/>
+=======
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="Register"/>
+>>>>>>> 8ade0a71884f860c9494c2dd1e6010aee14119eb
           </Events>
         </Component>
         <Component class="javax.swing.JButton" name="jButton2">
@@ -114,7 +118,11 @@
             <Property name="text" type="java.lang.String" value="Login"/>
           </Properties>
           <Events>
+<<<<<<< HEAD
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton2ActionPerformed"/>
+=======
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="Login"/>
+>>>>>>> 8ade0a71884f860c9494c2dd1e6010aee14119eb
           </Events>
         </Component>
         <Component class="javax.swing.JLabel" name="jLabel1">

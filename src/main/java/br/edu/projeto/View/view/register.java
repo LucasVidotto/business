@@ -1,7 +1,7 @@
 package br.edu.projeto.View.view;
 
 import br.edu.projeto.Model.DAO.dateacess;
-import br.edu.projeto.Model.Verification.Check;
+import br.edu.projeto.Model.Verification.RN.Check;
 import br.edu.projeto.Model.Vo.Client;
 import java.awt.Color;
 import javax.swing.ImageIcon;

@@ -39,6 +39,10 @@ public class Main extends javax.swing.JFrame {
 
         painelImagemFundo1.setImg(new ImageIcon("src/main/java/br/edu/projeto/View/img/menub.jpg"));
 
+<<<<<<< HEAD
+=======
+        EMP.setBackground(new java.awt.Color(255, 255, 255));
+>>>>>>> 8ade0a71884f860c9494c2dd1e6010aee14119eb
         EMP.setText("EMPLOYEE");
         EMP.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {

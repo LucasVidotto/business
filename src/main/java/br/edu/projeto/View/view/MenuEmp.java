@@ -50,21 +50,21 @@ public class MenuEmp extends javax.swing.JFrame {
         jButton2.setText("Change");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
+                Change(evt);
             }
         });
 
         jButton3.setText("Modify");
         jButton3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton3ActionPerformed(evt);
+                Modify(evt);
             }
         });
 
         jButton4.setText("New Product");
         jButton4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton4ActionPerformed(evt);
+                NewProdcut(evt);
             }
         });
 
@@ -116,7 +116,11 @@ public class MenuEmp extends javax.swing.JFrame {
         jMenuItem1.setText("<=");
         jMenuItem1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
+<<<<<<< HEAD
                 jMenuItem1ActionPerformed(evt);
+=======
+                Back(evt);
+>>>>>>> 8ade0a71884f860c9494c2dd1e6010aee14119eb
             }
         });
         jMenu1.add(jMenuItem1);
@@ -139,31 +143,37 @@ public class MenuEmp extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
+    private void NewProdcut(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_NewProdcut
         NewPro New = new NewPro();
         New.setSize(455,400);
         New.setVisible(true);
-    }//GEN-LAST:event_jButton4ActionPerformed
+    }//GEN-LAST:event_NewProdcut
 
-    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+    private void Modify(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Modify
         Change alter = new Change();
         alter.setSize(500,400);
         alter.getContentPane().setBackground(Color.black);
         alter.setVisible(true);
         
-    }//GEN-LAST:event_jButton3ActionPerformed
+    }//GEN-LAST:event_Modify
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+    private void Change(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Change
         modify mod = new modify();
         mod.setSize(500,400);
         mod.getContentPane().setBackground(Color.black);
         mod.setVisible(true);
         
-    }//GEN-LAST:event_jButton2ActionPerformed
+    }//GEN-LAST:event_Change
 
+<<<<<<< HEAD
     private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
        
     }//GEN-LAST:event_jMenuItem1ActionPerformed
+=======
+    private void Back(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Back
+       
+    }//GEN-LAST:event_Back
+>>>>>>> 8ade0a71884f860c9494c2dd1e6010aee14119eb
 
     /**
      * @param args the command line arguments

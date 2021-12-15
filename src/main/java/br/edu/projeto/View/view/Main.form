@@ -71,6 +71,12 @@
       <SubComponents>
         <Component class="javax.swing.JButton" name="EMP">
           <Properties>
+<<<<<<< HEAD
+=======
+            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+              <Color blue="ff" green="ff" red="ff" type="rgb"/>
+            </Property>
+>>>>>>> 8ade0a71884f860c9494c2dd1e6010aee14119eb
             <Property name="text" type="java.lang.String" value="EMPLOYEE"/>
           </Properties>
           <Events>

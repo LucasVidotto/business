@@ -14,6 +14,7 @@ import br.edu.projeto.Model.Vo.Stock;
 import java.util.List;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
+import javax.persistence.EntityTransaction;
 import javax.persistence.Persistence;
 import javax.persistence.Query;
 import javax.swing.JOptionPane;
@@ -77,29 +78,32 @@ public class BuyItem implements DAOBuy{
             
             for(Stock sto: resultList2){
                 if(sto.getPrice() == price){
-                    st.setName(p.getName());
-                    st.setDescription(p.getDescription());
-                    st.setPrice(p.getPrice());
-                    st.setProduct(p);
-                    st.setQuantity(sto.getQuantity() - quanti);
+                    if(sto.getQuantity() >= quanti){
+                        st.setName(p.getName());
+                        st.setDescription(p.getDescription());
+                        st.setPrice(p.getPrice());
+                        st.setProduct(p);
+                        st.setQuantity(sto.getQuantity() - quanti);
+
+                        acss.removerStock(sto, sto.getCode());
+                        dt2.removerProduct(pro, pro.getId());
+                        num = 1;
+                    }else{
+                        //JOptionPane.showMessageDialog(null,"sem essa quangtidade no estoque");
+                        JOptionPane.showMessageDialog(
+                        null, "ErrorMsg", "Failure", JOptionPane.ERROR_MESSAGE);
+                        num = 2;
+                    } 
                     
-                    acss.removerStock(sto, sto.getCode());
-                    dt2.removerProduct(pro, pro.getId());
-                    
-                    
-                    
-                    num = 1;
                 }else{
                     num = 2;
                 }
+                if(num == 1){
+                    break;
+                }
             }
             
-            /*if(p.getName() != null){
-                dt2.adicionarProduct(p);
-                acss.adicionarStock(st);
-            }else{
-                System.out.println("variavel nula, nao existe peristencia no banco");
-            }*/
+            
             dt2.adicionarProduct(p);
             acss.adicionarStock(st);
             
@@ -116,5 +120,30 @@ public class BuyItem implements DAOBuy{
       }
 
       return num;
-    } 
+    }
+    public String FindProduct(double price){
+        
+        String aux = "";
+        
+        EntityManagerFactory factory = 
+                Persistence.createEntityManagerFactory("Hibernate");
+        
+        EntityManager manager = factory.createEntityManager();
+        
+        Query q = manager.createQuery("select product from Product product");
+
+        List<Product> resultList = q.getResultList();
+
+        for (Product pro : resultList) {
+
+            if(pro.getPrice() == (price)){
+              aux = pro.getDescription();
+            }else{
+                System.out.println("Error");
+            }
+        }
+           
+        return aux;
+    }
+    
 }
